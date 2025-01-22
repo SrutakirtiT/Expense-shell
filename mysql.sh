@@ -46,10 +46,11 @@ mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "Setting root password"
 
 mysql -h mysql.tskdaws.online -u root -pExpenseApp@1 -e 'show databases;' &>>LOG_FILE_NAME
+ 
   if [ $? -ne 0 ]
   then
       echo "MySQL root password not set up" &>>$LOG_FILE_NAME
-      mysql-secure-installlation --set-root-passExpenseApp@1
+      mysql-secure-installlation --set-root-pass ExpenseApp@1
       VALIDATE $? "Setting root password"
 
   else
